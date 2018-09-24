@@ -1,0 +1,2 @@
+# machikorostats
+MachiKoro Strategy Tester
