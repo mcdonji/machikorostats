@@ -20,16 +20,16 @@ public class Game {
             ArrayList<Establishment> initEstablishments = new ArrayList<>();
             initEstablishments.add(deck.Take(Establishments.WheatField));
             initEstablishments.add(deck.Take(Establishments.Bakery));
-            Player player = new Player(random, 3, initEstablishments);
+            Player player = new Player(i, random, 3, initEstablishments);
             players.add(player);
         }
 
         for (Player player : players) {
-            player.AddOtherPlayers(players);
+            player.addOtherPlayers(players);
         }
     }
 
-    public void Play() {
+    public void play() {
         this.startTime = new Date();
         while (isGameComplete()) {
             for (Player player : players) {
