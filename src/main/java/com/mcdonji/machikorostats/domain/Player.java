@@ -2,11 +2,12 @@ package com.mcdonji.machikorostats.domain;
 
 import java.util.*;
 
-import static sun.audio.AudioPlayer.player;
 
 public class Player {
 
     private UUID id;
+    private int playerNumber;
+    private String name;
     private Random random;
     private int money;
     private Strategy strategy;
@@ -14,20 +15,31 @@ public class Player {
     private Collection<Establishment> establishments = new ArrayList<Establishment>();
 
 
-    public Player(Random random, int money, Collection<Establishment> initialEstablishments) {
+    public Player(int playerNumber, String name, Random random, int money, Collection<Establishment> initialEstablishments)    {
+	this(UUID.randomUUID(), playerNumber, name, random, money, initialEstablishments);
+    }
+
+    public Player(int playerNumber, Random random, int money, Collection<Establishment> initialEstablishments)    {
+	this(UUID.randomUUID(),playerNumber, "Player$(playerNumber)", random, money, initialEstablishments);
+    }
+
+    public Player(UUID id, int playerNumber,  String name, Random random, int money, Collection<Establishment> initialEstablishments)
+    {
+        this.id = id;
+        this.playerNumber = playerNumber;
+	this.name = name;
         this.random = random;
         this.money = money;
         establishments = initialEstablishments;
-        this.id = UUID.randomUUID();
         strategy = new Strategy();
     }
 
 
-    public void GetEstablishment(Establishment establishment) {
+    public void getEstablishment(Establishment establishment) {
         establishments.add(establishment);
     }
 
-    public void AddOtherPlayers(ArrayList<Player> allPlayers) {
+    public void addOtherPlayers(ArrayList<Player> allPlayers) {
         for (Player otherPlayer:allPlayers) {
             if (!id.equals(otherPlayer.getId())) {
                 otherPlayers.add(otherPlayer);
@@ -35,8 +47,17 @@ public class Player {
         }
     }
 
+    public int otherPlayerCount() 
+    {
+	return otherPlayers.size();
+    }
+
     public UUID getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
