@@ -32,14 +32,13 @@ public class Game {
     public void play() {
         this.startTime = new Date();
         while (isGameComplete()) {
-            for (Player player : players) {
-                deck = player.Move(deck);
-            }
+            players.forEach(player -> deck = player.Move(deck));
         }
     }
 
-    private boolean isGameComplete() {
-        return false;
+    private boolean isGameComplete()
+    {
+        return players.stream().filter(player -> player.HasWon());
     }
 
     public Date getStartTime() {

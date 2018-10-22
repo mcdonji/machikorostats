@@ -13,6 +13,7 @@ public class Player {
     private Strategy strategy;
     private Collection<Player> otherPlayers = new ArrayList<Player>();
     private Collection<Establishment> establishments = new ArrayList<Establishment>();
+    private Collection<Landmark> landmarks = new ArrayList<Landmark>();
 
 
     public Player(int playerNumber, String name, Random random, int money, Collection<Establishment> initialEstablishments)    {
@@ -119,5 +120,9 @@ public class Player {
     private int roll() {
 
         return random.nextInt(6);
+    }
+
+    public boolean HasWon() {
+
     }
 }

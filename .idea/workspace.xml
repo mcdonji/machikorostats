@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ca1c799-8f6b-4391-82d9-58d49f31a5a2" name="Default Changelist" comment="" />
+    <list default="true" id="4ca1c799-8f6b-4391-82d9-58d49f31a5a2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Landmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,28 +38,28 @@
         <counts>
           <entry key="gradle" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="21" />
+          <entry key="java" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="21" />
+          <entry key="JAVA" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="5" />
           <entry key="gradle" value="27" />
-          <entry key="java" value="4311" />
+          <entry key="java" value="4461" />
           <entry key="txt" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="27" />
-          <entry key="JAVA" value="4311" />
+          <entry key="JAVA" value="4461" />
           <entry key="PLAIN_TEXT" value="29" />
         </counts>
       </usages-collector>
@@ -65,13 +71,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+            <state relative-caret-position="579">
+              <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1215#1216#0" expanded="true" />
+                <element signature="e#1289#1290#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,8 +88,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="102">
+              <caret line="6" selection-start-line="5" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Landmark.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -89,22 +106,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+            <state relative-caret-position="238">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#305#313#0" expanded="true" />
+                <element signature="e#385#400#0" expanded="true" />
+                <element signature="e#1285#1286#0" expanded="true" />
+                <element signature="e#1334#1335#0" expanded="true" />
+                <element signature="e#1615#1616#0" expanded="true" />
+                <element signature="e#1650#1651#0" expanded="true" />
+                <element signature="e#1677#1678#0" expanded="true" />
+                <element signature="e#1702#1703#0" expanded="true" />
+                <element signature="e#1733#1734#0" expanded="true" />
+                <element signature="e#1760#1761#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+            <state relative-caret-position="324">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#628#636#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,7 +152,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/EstablishmentDeck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1207">
+            <state relative-caret-position="698">
               <caret line="74" selection-start-line="74" selection-end-line="74" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -137,8 +164,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/EstablishmentInDeck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+            <state relative-caret-position="86">
+              <caret line="7" lean-forward="true" selection-start-line="6" selection-end-line="7" />
               <folding>
                 <element signature="e#580#581#0" expanded="true" />
                 <element signature="e#616#617#0" expanded="true" />
@@ -581,11 +608,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/EstablishmentInDeck.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Building.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Strategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/EstablishmentDeck.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Landmark.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java" />
       </list>
     </option>
   </component>
@@ -695,7 +723,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539926466448" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540179104392" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -782,12 +810,12 @@
       <workItem from="1538072836416" duration="12278000" />
       <workItem from="1538416050136" duration="14560000" />
       <workItem from="1539663104694" duration="594000" />
-      <workItem from="1539925373148" duration="1582000" />
+      <workItem from="1539925373148" duration="2415000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40298000" />
+    <option name="totallyTimeSpent" value="41131000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="56" y="-6" width="1551" height="913" extended-state="6" />
@@ -911,23 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Strategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -938,9 +949,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#628#636#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="5" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Landmark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/EstablishmentDeck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
+        <state relative-caret-position="698">
           <caret line="74" selection-start-line="74" selection-end-line="74" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -950,8 +986,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/EstablishmentInDeck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+        <state relative-caret-position="86">
+          <caret line="7" lean-forward="true" selection-start-line="6" selection-end-line="7" />
           <folding>
             <element signature="e#580#581#0" expanded="true" />
             <element signature="e#616#617#0" expanded="true" />
@@ -967,20 +1003,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#305#313#0" expanded="true" />
+            <element signature="e#385#400#0" expanded="true" />
+            <element signature="e#1285#1286#0" expanded="true" />
+            <element signature="e#1334#1335#0" expanded="true" />
+            <element signature="e#1615#1616#0" expanded="true" />
+            <element signature="e#1650#1651#0" expanded="true" />
+            <element signature="e#1677#1678#0" expanded="true" />
+            <element signature="e#1702#1703#0" expanded="true" />
+            <element signature="e#1733#1734#0" expanded="true" />
+            <element signature="e#1760#1761#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        <state relative-caret-position="579">
+          <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1215#1216#0" expanded="true" />
+            <element signature="e#1289#1290#0" expanded="true" />
           </folding>
         </state>
       </provider>
