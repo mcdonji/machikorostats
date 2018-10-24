@@ -17,20 +17,29 @@ public class PlayerTest {
         Player player3 = new Player(3, "Sarabi", new Random(), 3,  deck.Esablishments());
 
         ArrayList<Player> players = new ArrayList<Player>(3);
-	players.add(player1);
-	players.add(player2);
-	players.add(player3);
+        players.add(player1);
+        players.add(player2);
+        players.add(player3);
 
 	
         for (Player player : players) 
-	{
+    	{
             player.addOtherPlayers(players);
         }
 
-	assertEquals(players.size(),3);
-	assertEquals(player1.otherPlayerCount(), 2);
-	assertEquals(player2.otherPlayerCount(), 2);
-	assertEquals(player3.otherPlayerCount(), 2);
-//        EstablishmentDeck updatedDeck = player.Move(deck);
+        assertEquals(players.size(),3);
+        assertEquals(player1.otherPlayerCount(), 2);
+        assertEquals(player2.otherPlayerCount(), 2);
+        assertEquals(player3.otherPlayerCount(), 2);
     }
+
+    @Test
+    public void testPlayerMove() {
+        EstablishmentDeck deck = EstablishmentDeck.CreateDeck();
+        Player jim = new Player(1, "Jim", new Random(), 3,  deck.Esablishments());
+        Player pamela = new Player(2, "Pamela", new Random(), 3,  deck.Esablishments());
+
+
+    }
+
 }
