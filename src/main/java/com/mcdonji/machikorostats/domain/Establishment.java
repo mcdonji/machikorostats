@@ -11,6 +11,7 @@ public class Establishment {
     public Establishment(String name, int production, ProductionType productionType, int[] activateOnRole, Enabler wheat) {
         this.name = name;
         this.production = production;
+        this.productionType = productionType;
         this.activateOnRole = activateOnRole;
     }
 

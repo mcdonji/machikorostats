@@ -2,6 +2,7 @@ package com.mcdonji.machikorostats.domain;
 
 import org.junit.Test;
 
+import java.util.List;
 import java.util.Random;
 import java.util.ArrayList;
 
@@ -31,6 +32,30 @@ public class PlayerTest {
         assertEquals(player1.otherPlayerCount(), 2);
         assertEquals(player2.otherPlayerCount(), 2);
         assertEquals(player3.otherPlayerCount(), 2);
+    }
+
+    @Test
+    public void testRevenueFromPlayerWithNoEstablishments() {
+        Player jim = new Player(1, "Jim", new Random(), 3, new ArrayList<Establishment>() {});
+        assertEquals(jim.revenueFromMyRoll(1), 0);
+        assertEquals(jim.revenueFromMyRoll(2), 0);
+        assertEquals(jim.revenueFromMyRoll(3), 0);
+        assertEquals(jim.revenueFromMyRoll(4), 0);
+        assertEquals(jim.revenueFromMyRoll(5), 0);
+        assertEquals(jim.revenueFromMyRoll(6), 0);
+    }
+
+    @Test
+    public void testRevenueFromPlayerWithWheatField() {
+        ArrayList<Establishment> initialEstablishments = new ArrayList<>();
+        initialEstablishments.add(Establishments.WheatField);
+        Player jim = new Player(1, "Jim", new Random(), 3, initialEstablishments);
+        assertEquals(jim.revenueFromMyRoll(1), 1);
+        assertEquals(jim.revenueFromMyRoll(2), 0);
+        assertEquals(jim.revenueFromMyRoll(3), 0);
+        assertEquals(jim.revenueFromMyRoll(4), 0);
+        assertEquals(jim.revenueFromMyRoll(5), 0);
+        assertEquals(jim.revenueFromMyRoll(6), 0);
     }
 
     @Test

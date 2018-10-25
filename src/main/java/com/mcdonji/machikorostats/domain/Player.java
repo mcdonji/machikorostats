@@ -13,22 +13,22 @@ public class Player {
     private Strategy strategy;
     private Collection<Player> otherPlayers = new ArrayList<Player>();
     private Collection<Establishment> establishments = new ArrayList<Establishment>();
-    private Collection<Landmark> landmarks = new ArrayList<Landmark>();
+    private Collection<Building> buildings = new ArrayList<Building>();
 
 
     public Player(int playerNumber, String name, Random random, int money, Collection<Establishment> initialEstablishments)    {
-	this(UUID.randomUUID(), playerNumber, name, random, money, initialEstablishments);
+    	this(UUID.randomUUID(), playerNumber, name, random, money, initialEstablishments);
     }
 
     public Player(int playerNumber, Random random, int money, Collection<Establishment> initialEstablishments)    {
-	this(UUID.randomUUID(),playerNumber, "Player$(playerNumber)", random, money, initialEstablishments);
+	    this(UUID.randomUUID(),playerNumber, "Player$(playerNumber)", random, money, initialEstablishments);
     }
 
     public Player(UUID id, int playerNumber,  String name, Random random, int money, Collection<Establishment> initialEstablishments)
     {
         this.id = id;
         this.playerNumber = playerNumber;
-	this.name = name;
+	    this.name = name;
         this.random = random;
         this.money = money;
         establishments = initialEstablishments;
@@ -107,7 +107,7 @@ public class Player {
         money += revenue;
     }
 
-    private int revenueFromMyRoll(int roll) {
+    public int revenueFromMyRoll(int roll) {
         int revenue = 0;
         for (Establishment establishment: establishments) {
             if (establishment.getProductionType().equals(ProductionType.YourTurn)) {
@@ -118,11 +118,10 @@ public class Player {
     }
 
     private int roll() {
-
         return random.nextInt(6);
     }
 
     public boolean HasWon() {
-
+        return false;
     }
 }

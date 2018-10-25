@@ -38,7 +38,7 @@ public class Game {
 
     private boolean isGameComplete()
     {
-        return players.stream().filter(player -> player.HasWon());
+        return players.stream().filter(player -> player.HasWon()).count() > 0;
     }
 
     public Date getStartTime() {
