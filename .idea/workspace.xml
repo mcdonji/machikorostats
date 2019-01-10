@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ca1c799-8f6b-4391-82d9-58d49f31a5a2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -24,12 +29,16 @@
     <session id="812377668">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.24" value="3" />
+          <entry key="project.open.time.28" value="2" />
+          <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -43,7 +52,7 @@
         <counts>
           <entry key="Groovy" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="30" />
+          <entry key="JAVA" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -57,7 +66,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="27" />
-          <entry key="JAVA" value="4851" />
+          <entry key="JAVA" value="5039" />
           <entry key="PLAIN_TEXT" value="29" />
         </counts>
       </usages-collector>
@@ -72,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="1105">
+              <caret line="71" column="53" selection-start-line="71" selection-start-column="53" selection-end-line="71" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,14 +111,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="272">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#650#651#0" expanded="true" />
-                <element signature="e#683#684#0" expanded="true" />
-                <element signature="e#810#811#0" expanded="true" />
-                <element signature="e#847#848#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,25 +129,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishments.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+              <folding>
+                <element signature="e#1699#1700#0" expanded="true" />
+                <element signature="e#1734#1735#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="115" column="48" selection-start-line="115" selection-start-column="48" selection-end-line="115" selection-end-column="48" />
+            <state relative-caret-position="306">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
-                <element signature="e#3629#3630#0" expanded="true" />
-                <element signature="e#3669#3670#0" expanded="true" />
-                <element signature="e#3700#3701#0" expanded="true" />
-                <element signature="e#3728#3729#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -185,7 +200,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="C:\ProgramData\chocolatey\lib\gradle\tools\gradle-4.10" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\ms_ji\.gradle\wrapper\dists\gradle-4.10-bin\bg6py687nqv2mbe6e1hdtk57h\gradle-4.10" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -585,12 +600,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Strategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/EstablishmentDeck.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Landmark.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Building.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishments.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java" />
       </list>
     </option>
   </component>
@@ -612,8 +627,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -690,6 +703,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -700,7 +714,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541652677811" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546878064788" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -729,7 +743,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest.testRevenueFromPlayerWithWheatField">
+  <component name="RunManager" selected="JUnit.PlayerTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -738,6 +752,21 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="machikorostats_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mcdonji.machikorostats.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mcdonji.machikorostats.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.mcdonji.machikorostats.domain.PlayerTest" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -810,9 +839,11 @@
       <item itemvalue="Spring Boot.ApplicationStartup" />
       <item itemvalue="JUnit.PlayerTest.testRevenueFromPlayerWithNoEstablishments" />
       <item itemvalue="JUnit.PlayerTest.testRevenueFromPlayerWithWheatField" />
+      <item itemvalue="JUnit.PlayerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.PlayerTest.testRevenueFromPlayerWithWheatField" />
         <item itemvalue="JUnit.PlayerTest.testRevenueFromPlayerWithNoEstablishments" />
       </list>
@@ -833,17 +864,16 @@
       <workItem from="1538416050136" duration="14560000" />
       <workItem from="1539663104694" duration="594000" />
       <workItem from="1539925373148" duration="4429000" />
-      <workItem from="1541650513558" duration="2131000" />
+      <workItem from="1541650513558" duration="2780000" />
+      <workItem from="1542515916178" duration="549000" />
+      <workItem from="1545539359670" duration="305000" />
+      <workItem from="1545539894985" duration="2046000" />
+      <workItem from="1546277303525" duration="5320000" />
+      <workItem from="1547100334939" duration="366000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PlayerTest_testRevenueFromPlayerWithNoEstablishments - 2018.10.23 at 23h 44m 56s.xml">
-      <configuration name="PlayerTest.testRevenueFromPlayerWithNoEstablishments" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PlayerTest_testRevenueFromPlayerWithWheatField - 2018.10.23 at 23h 47m 39s.xml">
-      <configuration name="PlayerTest.testRevenueFromPlayerWithWheatField" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PlayerTest_testRevenueFromPlayerWithWheatField - 2018.10.23 at 23h 50m 53s.xml">
       <configuration name="PlayerTest.testRevenueFromPlayerWithWheatField" configurationId="JUnit" />
     </history-entry>
@@ -868,15 +898,21 @@
     <history-entry file="PlayerTest_testRevenueFromPlayerWithWheatField - 2018.11.07 at 21h 24m 27s.xml">
       <configuration name="PlayerTest.testRevenueFromPlayerWithWheatField" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PlayerTest_testRevenueFromPlayerWithWheatField - 2018.12.31 at 11h 47m 53s.xml">
+      <configuration name="PlayerTest.testRevenueFromPlayerWithWheatField" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PlayerTest - 2018.12.31 at 11h 48m 03s.xml">
+      <configuration name="PlayerTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45276000" />
+    <option name="totallyTimeSpent" value="54511000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="56" y="-6" width="1551" height="913" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.14735432" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2638982" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -885,9 +921,9 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32950193" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32950193" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3358876" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39974457" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39974457" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -954,18 +990,6 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java</url>
-          <line>52</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/machikorostats.iml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1021,9 +1045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1041,32 +1062,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
           <caret line="7" selection-start-line="6" selection-end-line="7" />
-          <folding>
-            <element signature="e#580#581#0" expanded="true" />
-            <element signature="e#616#617#0" expanded="true" />
-            <element signature="e#660#661#0" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
-            <element signature="e#745#746#0" expanded="true" />
-            <element signature="e#786#787#0" expanded="true" />
-            <element signature="e#829#830#0" expanded="true" />
-            <element signature="e#871#872#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1215#1216#0" expanded="true" />
-            <element signature="e#1300#1301#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Landmark.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="71" column="53" selection-start-line="71" selection-start-column="53" selection-end-line="71" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1081,32 +1090,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Building.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="272">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="115" column="48" selection-start-line="115" selection-start-column="48" selection-end-line="115" selection-end-column="48" />
-          <folding>
-            <element signature="e#3629#3630#0" expanded="true" />
-            <element signature="e#3669#3670#0" expanded="true" />
-            <element signature="e#3700#3701#0" expanded="true" />
-            <element signature="e#3728#3729#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1118,24 +1107,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishment.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishments.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#683#684#0" expanded="true" />
-            <element signature="e#810#811#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Establishments.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Building.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        <state relative-caret-position="68">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+          <folding>
+            <element signature="e#1699#1700#0" expanded="true" />
+            <element signature="e#1734#1735#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

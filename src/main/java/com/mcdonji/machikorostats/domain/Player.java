@@ -76,13 +76,17 @@ public class Player {
 
     public EstablishmentDeck Move(EstablishmentDeck deck) {
         int roll = roll();
-        int revenue = revenueFromMyRoll(roll);
-        money += revenue;
+        int revenueFromMe = revenueFromMyRoll(roll);
+        money += revenueFromMe;
+        int revenueFromOthers = 0;
         for (Player otherPlayer: otherPlayers) {
-            otherPlayer.revenueFromOtherPlayersRoll(roll);
+            revenueFromOthers += otherPlayer.revenueFromOtherPlayersRoll(roll);
         }
+
+        money += revenueFromOthers;
+
         Building building = shouldActivateBuilding();
-        if (building !=null) {
+        if (building != null) {
             activateBuilding(building);
         } else {
             Establishment desired = strategy.GetEstablishmentPreference(money, deck, this, otherPlayers);

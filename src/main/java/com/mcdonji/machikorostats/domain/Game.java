@@ -11,7 +11,9 @@ public class Game {
     private EstablishmentDeck deck;
     private ArrayList<Player> players;
     private Random random;
+
     public Game(int numberOfPlayers) {
+
         deck = EstablishmentDeck.CreateDeck();
         players = new ArrayList<Player>(numberOfPlayers);
         random = new Random();

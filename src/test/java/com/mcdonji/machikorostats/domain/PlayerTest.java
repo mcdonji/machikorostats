@@ -61,8 +61,23 @@ public class PlayerTest {
     @Test
     public void testPlayerMove() {
         EstablishmentDeck deck = EstablishmentDeck.CreateDeck();
-        Player jim = new Player(1, "Jim", new Random(), 3,  deck.Esablishments());
-        Player pamela = new Player(2, "Pamela", new Random(), 3,  deck.Esablishments());
+
+        ArrayList<Establishment> initEstablishments = new ArrayList<>();
+        initEstablishments.add(Establishments.WheatField);
+        initEstablishments.add(Establishments.Bakery);
+
+        Player jim = new Player(1, "Jim", new Random(), 3,  initEstablishments);
+        Player pamela = new Player(2, "Pamela", new Random(), 3,  initEstablishments);
+
+        ArrayList<Player> players = new ArrayList<Player>();
+        players.add(jim);
+        players.add(pamela);
+
+        jim.addOtherPlayers(players);
+        pamela.addOtherPlayers(players);
+
+        deck = jim.Move(deck);
+        assertEquals(jim.);
 
 
     }
