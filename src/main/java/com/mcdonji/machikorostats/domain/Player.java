@@ -110,11 +110,14 @@ public class Player {
     public int revenueFromMyRoll(int roll) {
         int revenue = 0;
         for (Establishment establishment: establishments) {
-            if (establishment.getProductionType().equals(ProductionType.YourTurn)) {
-                revenue += establishment.getProduction(establishments);
+            if (Arrays.stream(establishment.getActivateOnRole()).anyMatch(ao->ao ==roll)) {
+                if (establishment.getProductionType().equals(ProductionType.YourTurn) ||
+                        establishment.getProductionType().equals(ProductionType.AnyonesTurn)) {
+                    revenue += establishment.getProduction(establishments);
+                }
             }
         }
-        return 0;
+        return revenue;
     }
 
     private int roll() {
