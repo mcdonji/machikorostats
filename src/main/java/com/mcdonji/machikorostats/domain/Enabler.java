@@ -1,6 +1,8 @@
 package com.mcdonji.machikorostats.domain;
 
 public enum Enabler {
-    Wheat,
-    Bakery
+    Farm,
+    Ranch,
+    Mine,
+    None
 }

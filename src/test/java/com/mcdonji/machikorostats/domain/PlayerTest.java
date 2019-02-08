@@ -2,7 +2,6 @@ package com.mcdonji.machikorostats.domain;
 
 import org.junit.Test;
 
-import java.util.List;
 import java.util.Random;
 import java.util.ArrayList;
 
@@ -37,12 +36,12 @@ public class PlayerTest {
     @Test
     public void testRevenueFromPlayerWithNoEstablishments() {
         Player jim = new Player(1, "Jim", new Random(), 3, new ArrayList<Establishment>() {});
-        assertEquals(jim.revenueFromMyRoll(1), 0);
-        assertEquals(jim.revenueFromMyRoll(2), 0);
-        assertEquals(jim.revenueFromMyRoll(3), 0);
-        assertEquals(jim.revenueFromMyRoll(4), 0);
-        assertEquals(jim.revenueFromMyRoll(5), 0);
-        assertEquals(jim.revenueFromMyRoll(6), 0);
+        assertEquals(jim.revenueFromMyRoll(new DiceRoll(1)), 0);
+        assertEquals(jim.revenueFromMyRoll(new DiceRoll(2)), 0);
+        assertEquals(jim.revenueFromMyRoll(new DiceRoll(3)), 0);
+        assertEquals(jim.revenueFromMyRoll(new DiceRoll(4)), 0);
+        assertEquals(jim.revenueFromMyRoll(new DiceRoll(5)), 0);
+        assertEquals(jim.revenueFromMyRoll(new DiceRoll(6)), 0);
     }
 
     @Test
@@ -50,24 +49,26 @@ public class PlayerTest {
         ArrayList<Establishment> initialEstablishments = new ArrayList<>();
         initialEstablishments.add(Establishments.WheatField);
         Player jim = new Player(1, "Jim", new Random(), 3, initialEstablishments);
-        assertEquals(jim.revenueFromMyRoll(1), 1);
-        assertEquals(jim.revenueFromMyRoll(2), 0);
-        assertEquals(jim.revenueFromMyRoll(3), 0);
-        assertEquals(jim.revenueFromMyRoll(4), 0);
-        assertEquals(jim.revenueFromMyRoll(5), 0);
-        assertEquals(jim.revenueFromMyRoll(6), 0);
+        assertEquals(jim.revenueFromMyRoll(new DiceRoll(1)), 1);
+        assertEquals(jim.revenueFromMyRoll(new DiceRoll(2)), 0);
+        assertEquals(jim.revenueFromMyRoll(new DiceRoll(3)), 0);
+        assertEquals(jim.revenueFromMyRoll(new DiceRoll(4)), 0);
+        assertEquals(jim.revenueFromMyRoll(new DiceRoll(5)), 0);
+        assertEquals(jim.revenueFromMyRoll(new DiceRoll(6)), 0);
     }
 
     @Test
     public void testPlayerMove() {
         EstablishmentDeck deck = EstablishmentDeck.CreateDeck();
+        assertEquals(17, deck.AvaliableEstablishments().size());
 
         ArrayList<Establishment> initEstablishments = new ArrayList<>();
         initEstablishments.add(Establishments.WheatField);
         initEstablishments.add(Establishments.Bakery);
 
-        Player jim = new Player(1, "Jim", new Random(), 3,  initEstablishments);
-        Player pamela = new Player(2, "Pamela", new Random(), 3,  initEstablishments);
+        Strategy defaultStrategy = new Strategy();
+        Player jim = new Player(1, "Jim", new Random(), 3,  deck.Take(initEstablishments),defaultStrategy);
+        Player pamela = new Player(2, "Pamela", new Random(), 3,  deck.Take(initEstablishments),defaultStrategy);
 
         ArrayList<Player> players = new ArrayList<Player>();
         players.add(jim);
@@ -76,10 +77,12 @@ public class PlayerTest {
         jim.addOtherPlayers(players);
         pamela.addOtherPlayers(players);
 
-        deck = jim.Move(deck);
-        assertEquals(jim.);
+        assertEquals(88, deck.AvaliableEstablishmentsCount());
+        assertEquals(3, jim.getMoney());
 
-
+        assertEquals(1, jim.HandleRoll(new DiceRoll(2)));
+        deck = jim.Move(deck, new DiceRoll(2));
+        assertEquals(87, deck.AvaliableEstablishmentsCount());
     }
 
 }

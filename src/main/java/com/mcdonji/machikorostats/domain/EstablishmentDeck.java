@@ -33,10 +33,15 @@ public class EstablishmentDeck {
         deck.add(new EstablishmentInDeck(number, establishment, cost));
     }
 
+    public Collection<Establishment> Take(ArrayList<Establishment> initEstablishments) {
+        initEstablishments.forEach(this::Take);
+        return initEstablishments;
+    }
+
     public Establishment Take(Establishment establishment) {
         for (EstablishmentInDeck establishmentInDec: deck) {
             if (establishmentInDec.getEstablishment().equals(establishment)) {
-                if (establishmentInDec.reduceEstablishmentsNumber()) {
+                if (establishmentInDec.reduceEstablishmentsLeft()) {
                     return establishment;
                 } else {
                     return null;
@@ -64,6 +69,10 @@ public class EstablishmentDeck {
         return 0;
     }
 
+    public int AvaliableEstablishmentsCount() {
+        return deck.stream().mapToInt(i->i.getEstablishmentsLeft()).sum();
+    }
+
     public List<Establishment> AvaliableEstablishments() {
         return deck
                 .stream().filter(x -> x.getEstablishmentsLeft() > 0).collect(Collectors.toList())
@@ -74,4 +83,5 @@ public class EstablishmentDeck {
         return deck
                 .stream().map(x-> x.getEstablishment()).collect(Collectors.toList());
     }
+
 }

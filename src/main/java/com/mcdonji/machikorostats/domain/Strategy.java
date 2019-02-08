@@ -18,4 +18,36 @@ public class Strategy {
         }
         return null;
     }
+
+
+    public boolean shouldActivateLandmark(int money, List<Landmark> landmarks) {
+        return landmarkToActivate(money,  landmarks) != null;
+    }
+
+    public Landmark landmarkToActivate(int money, List<Landmark> landmarks) {
+        for (Landmark landmark: landmarks) {
+            if (landmark.isActive() == false && (money > landmark.getCost())) {
+                return landmark;
+            }
+        }
+        return null;
+    }
+
+    public int NumberOfDiceToRoll(Player player) {
+        if (player.trainStation.isActive()) {
+            return 2;
+        }
+        return 1;
+    }
+
+    public boolean shouldReroll(DiceRoll roll) {
+        return true;
+    }
+
+    public int NumberOfDiceToRollOnRerole(Player player) {
+        if (player.trainStation.isActive()){
+            return 2;
+        }
+        return 1;
+    }
 }

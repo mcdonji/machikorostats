@@ -21,17 +21,15 @@ public class EstablishmentInDeck {
         return establishmentsNumber;
     }
 
-    public int getEstablishmentsLeft() {
-        return establishmentsLeft;
-    }
+    public int getEstablishmentsLeft() { return establishmentsLeft; }
 
     public int getCostOfEstablishment() {
         return costOfEstablishment;
     }
 
-    public boolean reduceEstablishmentsNumber() {
-        if (establishmentsNumber - establishmentsLeft > 0) {
-            establishmentsNumber--;
+    public boolean reduceEstablishmentsLeft() {
+        if (establishmentsNumber >= establishmentsLeft) {
+            establishmentsLeft--;
             return true;
         }
         return false;

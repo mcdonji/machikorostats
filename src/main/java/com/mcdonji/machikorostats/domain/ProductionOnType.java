@@ -1,6 +1,6 @@
 package com.mcdonji.machikorostats.domain;
 
-public enum ProductionType {
+public enum ProductionOnType {
     AnyonesTurn,
     YourTurn,
     FromPlayerWhoRolledTheDice,

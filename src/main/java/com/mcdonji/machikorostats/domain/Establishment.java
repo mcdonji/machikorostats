@@ -6,14 +6,16 @@ import java.util.function.Function;
 public class Establishment {
     private String name;
     private Function<Collection<Establishment>, Integer> production;
-    private ProductionType productionType;
+    private ProductionOnType productionOnType;
     private int[] activateOnRole;
+    private Enabler enabler;
 
-    public Establishment(String name, Function<Collection<Establishment>, Integer> production, ProductionType productionType, int[] activateOnRole, Enabler wheat) {
+    public Establishment(String name, Function<Collection<Establishment>, Integer> production, ProductionOnType productionOnType, int[] activateOnRole, Enabler enabler) {
         this.name = name;
         this.production = production;
-        this.productionType = productionType;
+        this.productionOnType = productionOnType;
         this.activateOnRole = activateOnRole;
+        this.enabler = enabler;
     }
 
     public String getName() {
@@ -28,7 +30,15 @@ public class Establishment {
         return activateOnRole;
     }
 
-    public ProductionType getProductionType() {
-        return productionType;
+    public ProductionOnType getProductionOnType() {
+        return productionOnType;
+    }
+
+    public Enabler getEnabler() {
+        return enabler;
+    }
+
+    public void setEnabler(Enabler enabler) {
+        this.enabler = enabler;
     }
 }
