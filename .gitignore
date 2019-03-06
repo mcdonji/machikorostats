@@ -1,2 +1,11 @@
 /build/*
 /out/*
+
+.gradle/
+
+*.class
+
+*.jar
+*.war
+*.ear
+

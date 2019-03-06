@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 public class PlayerTest {
 
+
     @Test
     public void testCanCreatePlayers() {
         EstablishmentDeck deck = EstablishmentDeck.CreateDeck();
@@ -84,5 +85,4 @@ public class PlayerTest {
         deck = jim.Move(deck, new DiceRoll(2));
         assertEquals(87, deck.AvaliableEstablishmentsCount());
     }
-
 }
