@@ -14,17 +14,17 @@ public class Player {
     private Collection<Player> otherPlayers = new ArrayList<Player>();
     private Collection<Establishment> establishments = new ArrayList<Establishment>();
 
-    public Landmark trainStation = Landmark.TrainStation();
-    public Landmark shoppingMall = Landmark.ShoppingMall();
-    public Landmark amusementPark = Landmark.AmusementPark();
-    public Landmark radioTower = Landmark.RadioTower();
+    private Landmark trainStation = Landmark.TrainStation();
+    private Landmark shoppingMall = Landmark.ShoppingMall();
+    private Landmark amusementPark = Landmark.AmusementPark();
+    private Landmark radioTower = Landmark.RadioTower();
 
     public Player(int playerNumber, String name, Random random, int money, Collection<Establishment> initialEstablishments, Strategy strategy)    {
     	this(UUID.randomUUID(), playerNumber, name, random, money, initialEstablishments, strategy);
     }
 
     public Player(int playerNumber, String name, Random random, int money, Collection<Establishment> initialEstablishments)    {
-    	this(UUID.randomUUID(), playerNumber, name, random, money, initialEstablishments, new Strategy());
+    	this(UUID.randomUUID(), playerNumber, name, random, money, initialEstablishments, new SimpleStrategy());
     }
 
     public Player(int playerNumber, Random random, int money, Collection<Establishment> initialEstablishments, Strategy strategy)    {
@@ -32,7 +32,7 @@ public class Player {
     }
 
     public Player(int playerNumber, Random random, int money, Collection<Establishment> initialEstablishments)    {
-	    this(UUID.randomUUID(),playerNumber, "Player$(playerNumber)", random, money, initialEstablishments, new Strategy());
+	    this(UUID.randomUUID(),playerNumber, "Player$(playerNumber)", random, money, initialEstablishments, new SimpleStrategy());
     }
 
     public Player(UUID id, int playerNumber,  String name, Random random, int money, Collection<Establishment> initialEstablishments, Strategy strategy)
@@ -96,17 +96,17 @@ public class Player {
 
     public EstablishmentDeck Move(EstablishmentDeck deck) {
         DiceRoll roll = Dice.Roll(strategy.NumberOfDiceToRoll(this));
+        if (canReroll() && strategy.shouldReroll(roll)) {
+            roll = Dice.Roll(strategy.NumberOfDiceToRollOnRerole(this));
+        }
         return Move(deck, roll);
     }
 
     public EstablishmentDeck Move(EstablishmentDeck deck, DiceRoll roll) {
-        if (canReroll() && strategy.shouldReroll(roll)) {
-            roll = Dice.Roll(strategy.NumberOfDiceToRollOnRerole(this));
-        }
-        money += HandleRoll(roll);
+        money += CalculateRevenueForRoll(roll);
         if (strategy.shouldActivateLandmark(money, Landmarks())) {
-            Landmark building = strategy.landmarkToActivate(money, Landmarks());
-            activateBuilding(building);
+            Landmark landmark = strategy.landmarkToActivate(money, Landmarks());
+            activateLandmark(landmark);
         } else {
             Establishment desired = strategy.GetEstablishmentPreference(money, deck, this, otherPlayers);
             Establishment take = deck.Take(desired);
@@ -122,8 +122,7 @@ public class Player {
         return radioTower.isActive();
     }
 
-
-    public int HandleRoll(DiceRoll roll) {
+    public int CalculateRevenueForRoll(DiceRoll roll) {
         int calculatedRevenue = 0;
         int revenueFromMe = revenueFromMyRoll(roll);
         calculatedRevenue += revenueFromMe;
@@ -135,8 +134,11 @@ public class Player {
         return calculatedRevenue;
     }
 
-    private void activateBuilding(Landmark building) {
-
+    private void activateLandmark(Landmark building) {
+        if (building.getName() == trainStation.getName()) {trainStation.setActive(true);}
+        if (building.getName() == shoppingMall.getName()) {shoppingMall.setActive(true);}
+        if (building.getName() == amusementPark.getName()) {amusementPark.setActive(true);}
+        if (building.getName() == radioTower.getName()) {radioTower.setActive(true);}
     }
 
     private boolean shouldActivateBuilding() {
@@ -169,10 +171,17 @@ public class Player {
     }
 
     public boolean HasWon() {
-        return false;
+        return Landmarks().stream().anyMatch(lm -> !lm.isActive());
     }
 
     public int getMoney() {
         return money;
+    }
+
+    public int canRoll() {
+        if (trainStation.isActive()) {
+            return 2;
+        };
+        return 1;
     }
 }

@@ -1,0 +1,38 @@
+package com.mcdonji.machikorostats.domain.strategies;
+
+import com.mcdonji.machikorostats.domain.*;
+
+import java.util.Collection;
+import java.util.List;
+
+public class BreadStrategy implements Strategy {
+    @Override
+    public Establishment GetEstablishmentPreference(int money, EstablishmentDeck deck, Player player, Collection<Player> otherPlayers) {
+        return null;
+    }
+
+    @Override
+    public int NumberOfDiceToRoll(Player player) {
+        return 0;
+    }
+
+    @Override
+    public boolean shouldReroll(DiceRoll roll) {
+        return false;
+    }
+
+    @Override
+    public int NumberOfDiceToRollOnRerole(Player player) {
+        return 0;
+    }
+
+    @Override
+    public boolean shouldActivateLandmark(int money, List<Landmark> landmarks) {
+        return false;
+    }
+
+    @Override
+    public Landmark landmarkToActivate(int money, List<Landmark> landmarks) {
+        return null;
+    }
+}
