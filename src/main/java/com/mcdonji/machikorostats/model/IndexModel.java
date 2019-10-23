@@ -2,12 +2,13 @@ package com.mcdonji.machikorostats.model;
 
 public class IndexModel {
     private String welcomeMessage;
-    private CardsHyperApi cardsHyperApi;
+    private EstablishmentsApi establishmentsApi;
+    private GameApi gameApi;
 
     public IndexModel(String welcomeMessage) {
-
         this.welcomeMessage = welcomeMessage;
-        this.cardsHyperApi = new CardsHyperApi();
+        this.establishmentsApi = new EstablishmentsApi();
+        this.gameApi = new GameApi();
     }
 
     public String getWelcomeMessage() {
@@ -19,11 +20,19 @@ public class IndexModel {
     }
 
 
-    public CardsHyperApi getCardsHyperApi() {
-        return cardsHyperApi;
+    public EstablishmentsApi getEstablishmentsApi() {
+        return establishmentsApi;
     }
 
-    public void setCardsHyperApi(CardsHyperApi cardsHyperApi) {
-        this.cardsHyperApi = cardsHyperApi;
+    public void setEstablishmentsApi(EstablishmentsApi establishmentsApi) {
+        this.establishmentsApi = establishmentsApi;
+    }
+
+    public GameApi getGameApi() {
+        return gameApi;
+    }
+
+    public void setGameApi(GameApi gameApi) {
+        this.gameApi = gameApi;
     }
 }

@@ -8,10 +8,8 @@ import java.util.stream.Collectors;
 public class EstablishmentDeck {
     public static EstablishmentDeck CreateDeck() {
         EstablishmentDeck establishmentDeck = new EstablishmentDeck();
-        establishmentDeck.Add(4, Establishments.WheatField, 0);
         establishmentDeck.Add(6, Establishments.WheatField, 1);
         establishmentDeck.Add(6, Establishments.Ranch, 1);
-        establishmentDeck.Add(4, Establishments.Bakery, 0);
         establishmentDeck.Add(6, Establishments.Bakery, 1);
         establishmentDeck.Add(6, Establishments.Cafe, 2);
         establishmentDeck.Add(6, Establishments.ConvenienceStore, 2);
@@ -28,7 +26,7 @@ public class EstablishmentDeck {
         return establishmentDeck;
     }
 
-    private Collection<EstablishmentInDeck> deck = new ArrayList<EstablishmentInDeck>();
+    private ArrayList<EstablishmentInDeck> deck = new ArrayList<EstablishmentInDeck>();
     private void Add(int number, Establishment establishment, int cost) {
         deck.add(new EstablishmentInDeck(number, establishment, cost));
     }
@@ -79,9 +77,17 @@ public class EstablishmentDeck {
                 .stream().map(x-> x.getEstablishment()).collect(Collectors.toList());
     }
 
-    public List<Establishment> Esablishments() {
+    public List<Establishment> Establishments() {
         return deck
                 .stream().map(x-> x.getEstablishment()).collect(Collectors.toList());
     }
 
+    public int AvaliableEstablishmentsCount(Establishment establishment) {
+        return deck.stream().filter(x -> x.getEstablishment().getName() == establishment.getName()).findAny()
+                .get().getEstablishmentsLeft();
+    }
+
+    public ArrayList<EstablishmentInDeck> getDeck() {
+        return deck;
+    }
 }

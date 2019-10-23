@@ -44,8 +44,8 @@ public class Game {
             roundsToComplete++;
         }
         stopWatch.stop();
-        GameResult
         this.endTime = new Date();
+        return new GameResult();
     }
 
     private boolean isGameComplete()

@@ -9,6 +9,7 @@ public interface Strategy {
     int NumberOfDiceToRoll(Player player);
     boolean shouldReroll(DiceRoll roll);
     int NumberOfDiceToRollOnRerole(Player player);
-    boolean shouldActivateLandmark(int money, List<Landmark> landmarks);
     Landmark landmarkToActivate(int money, List<Landmark> landmarks);
+    Player ChoosePlayerToTakeFrom(Player player, Collection<Player> otherPlayers);
+    EstablishmentTrade ChoosePlayerAndEstablishmentToTakeAndGive(Player player, Collection<Player> otherPlayers);
 }
