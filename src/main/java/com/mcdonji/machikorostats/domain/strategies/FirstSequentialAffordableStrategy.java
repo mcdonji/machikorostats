@@ -2,6 +2,7 @@ package com.mcdonji.machikorostats.domain.strategies;
 
 import com.mcdonji.machikorostats.domain.*;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -14,7 +15,7 @@ public class FirstSequentialAffordableStrategy implements Strategy {
 
 
     @Override
-    public Establishment GetEstablishmentPreference(int money, EstablishmentDeck deck, Player player, Collection<Player> otherPlayers) {
+    public Establishment GetEstablishmentPreference(int money, EstablishmentDeck deck, Player player, ArrayList<Player> otherPlayers) {
         for (Establishment possibleEstablishment: deck.AvaliableEstablishments()) {
             if (deck.CostOf(possibleEstablishment) <= money) {
                 return possibleEstablishment;
@@ -43,7 +44,7 @@ public class FirstSequentialAffordableStrategy implements Strategy {
     }
 
     @Override
-    public Landmark landmarkToActivate(int money, List<Landmark> landmarks) {
+    public Landmark landmarkToActivate(int money, ArrayList<Landmark> landmarks) {
         for (Landmark landmark : landmarks) {
             if (landmark.isActive() == false && (money > landmark.getCost())) {
                 return landmark;
@@ -53,12 +54,12 @@ public class FirstSequentialAffordableStrategy implements Strategy {
     }
 
     @Override
-    public Player ChoosePlayerToTakeFrom(Player player, Collection<Player> otherPlayers) {
+    public Player ChoosePlayerToTakeFrom(Player player, ArrayList<Player> otherPlayers) {
         return otherPlayers.iterator().next();
     }
 
     @Override
-    public EstablishmentTrade ChoosePlayerAndEstablishmentToTakeAndGive(Player player, Collection<Player> otherPlayers) {
+    public EstablishmentTrade ChoosePlayerAndEstablishmentToTakeAndGive(Player player, ArrayList<Player> otherPlayers) {
         Player otherPlayer = otherPlayers.iterator().next();
         return new EstablishmentTrade(otherPlayer, otherPlayer.getGreenAndBlueEstablishments().iterator().next(), player.getGreenAndBlueEstablishments().iterator().next());
     }

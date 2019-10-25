@@ -123,7 +123,7 @@ public class PlayerTest {
         jim.addOtherPlayers(players);
         pamela.addOtherPlayers(players);
 
-        deck = jim.Move(deck, new DiceRoll(1));
+        deck = jim.move(deck, new DiceRoll(1));
 
         assertEquals(3, jim.Establishments().size());
         assertEquals(3, jim.Money());

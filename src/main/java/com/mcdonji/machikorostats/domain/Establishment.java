@@ -3,17 +3,18 @@ package com.mcdonji.machikorostats.domain;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Objects;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class Establishment {
     private String name;
-    private Function<Collection<Establishment>, Integer> production;
+    private BiFunction<ArrayList<Landmark>, ArrayList<Establishment>, Integer> production;
     private ProductionOnType productionOnType;
     private int[] activateOnRole;
     private Enabler enabler;
     private CardColor cardColor;
 
-    public Establishment(String name, Function<Collection<Establishment>, Integer> production, ProductionOnType productionOnType, int[] activateOnRole, Enabler enabler, CardColor cardColor) {
+    public Establishment(String name, BiFunction<ArrayList<Landmark>, ArrayList<Establishment>, Integer> production, ProductionOnType productionOnType, int[] activateOnRole, Enabler enabler, CardColor cardColor) {
         this.name = name;
         this.production = production;
         this.productionOnType = productionOnType;
@@ -27,10 +28,10 @@ public class Establishment {
     }
 
     public int getProduction() {
-        return production.apply(new ArrayList<Establishment>());
+        return production.apply(new ArrayList<Landmark>(), new ArrayList<Establishment>());
     }
-    public int getProduction(Collection<Establishment> establishments) {
-        return production.apply(establishments);
+    public int getProduction(ArrayList<Landmark> landmarks, ArrayList<Establishment> establishments) {
+        return production.apply(landmarks, establishments);
     }
 
     public int[] getActivateOnRole() {

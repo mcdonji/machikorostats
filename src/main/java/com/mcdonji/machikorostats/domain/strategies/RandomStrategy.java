@@ -18,9 +18,9 @@ public class RandomStrategy implements Strategy {
         return this.getClass().getName();
     }
 
-    public Establishment GetEstablishmentPreference(int money, EstablishmentDeck deck, Player player, Collection<Player> otherPlayers) {
+    public Establishment GetEstablishmentPreference(int money, EstablishmentDeck deck, Player player, ArrayList<Player> otherPlayers) {
         // 10% chance of doing nothing even if we can
-        if (random.nextInt(10) == 1) {
+        if (random.nextInt(10) == 0) {
             return null;
         }
         Establishment[] avaliableEstablishments = deck.AvaliableEstablishments().toArray(new Establishment[0]);
@@ -36,7 +36,7 @@ public class RandomStrategy implements Strategy {
         return null;
     }
 
-    public Landmark landmarkToActivate(int money, List<Landmark> landmarks) {
+    public Landmark landmarkToActivate(int money, ArrayList<Landmark> landmarks) {
         // 10% chance of doing nothing even if we can
         if (random.nextInt(10) == 1) {
             return null;
@@ -51,14 +51,14 @@ public class RandomStrategy implements Strategy {
     }
 
     @Override
-    public Player ChoosePlayerToTakeFrom(Player player, Collection<Player> otherPlayers) {
+    public Player ChoosePlayerToTakeFrom(Player player, ArrayList<Player> otherPlayers) {
         ArrayList<Player> op = new ArrayList<Player>(otherPlayers);
         Collections.shuffle(op);
         return op.iterator().next();
     }
 
     @Override
-    public EstablishmentTrade ChoosePlayerAndEstablishmentToTakeAndGive(Player player, Collection<Player> otherPlayers) {
+    public EstablishmentTrade ChoosePlayerAndEstablishmentToTakeAndGive(Player player, ArrayList<Player> otherPlayers) {
         ArrayList<Player> ops = new ArrayList<Player>(otherPlayers);
         Collections.shuffle(ops);
         Player otherPlayer =  ops.iterator().next();

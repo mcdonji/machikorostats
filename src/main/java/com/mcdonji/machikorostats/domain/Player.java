@@ -5,7 +5,6 @@ import com.mcdonji.machikorostats.domain.strategies.RandomStrategy;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.*;
-import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -20,8 +19,8 @@ public class Player {
     private int totalRevenue;
     private int moves;
     private Strategy strategy;
-    private Collection<Player> otherPlayers = new ArrayList<Player>();
-    private Collection<Establishment> establishments = new ArrayList<Establishment>();
+    private ArrayList<Player> otherPlayers = new ArrayList<Player>();
+    private ArrayList<Establishment> establishments = new ArrayList<Establishment>();
 
 
     private Landmark trainStation = Landmark.TrainStation();
@@ -29,19 +28,19 @@ public class Player {
     private Landmark amusementPark = Landmark.AmusementPark();
     private Landmark radioTower = Landmark.RadioTower();
 
-    public Player(int playerNumber, String name, Random random, int money, Collection<Establishment> initialEstablishments, Strategy strategy)    {
+    public Player(int playerNumber, String name, Random random, int money, ArrayList<Establishment> initialEstablishments, Strategy strategy)    {
     	this(UUID.randomUUID(), playerNumber, name, random, money, initialEstablishments, strategy);
     }
 
-    public Player(int playerNumber, String name, Random random, int money, Collection<Establishment> initialEstablishments)    {
+    public Player(int playerNumber, String name, Random random, int money, ArrayList<Establishment> initialEstablishments)    {
     	this(UUID.randomUUID(), playerNumber, name, random, money, initialEstablishments, new RandomStrategy());
     }
 
-    public Player(int playerNumber, Random random, int money, Collection<Establishment> initialEstablishments, Strategy strategy)    {
+    public Player(int playerNumber, Random random, int money, ArrayList<Establishment> initialEstablishments, Strategy strategy)    {
 	    this(UUID.randomUUID(),playerNumber, "Player$(playerNumber)", random, money, initialEstablishments, strategy);
     }
 
-    public Player(int playerNumber, Random random, int money, Collection<Establishment> initialEstablishments)    {
+    public Player(int playerNumber, Random random, int money, ArrayList<Establishment> initialEstablishments)    {
 	    this(UUID.randomUUID(),playerNumber, "Player$(playerNumber)", random, money, initialEstablishments, new RandomStrategy());
     }
     public Player(int playerNumber, String name) {
@@ -59,7 +58,7 @@ public class Player {
         this.strategy = new RandomStrategy();
     }
 
-    public Player(UUID id, int playerNumber, String name, Random random, int money, Collection<Establishment> initialEstablishments, Strategy strategy)
+    public Player(UUID id, int playerNumber, String name, Random random, int money, ArrayList<Establishment> initialEstablishments, Strategy strategy)
     {
         this.id = id;
         this.playerNumber = playerNumber;
@@ -74,7 +73,7 @@ public class Player {
 
     public String compactRepresentation() {
         NumberFormat nf = new DecimalFormat("##.0");
-        return String.format("%s-%s%s%s%s-%s", money, trainStation.isActive()?"A":"_", shoppingMall.isActive()?"A":"_", amusementPark.isActive()?"A":"_", radioTower.isActive()?"A":"_",nf.format( totalRevenue/moves));
+        return String.format("(%s %s %s %s%s%s%s %s)", playerNumber, money, establishments.size(),  trainStation.isActive()?"A":"_", shoppingMall.isActive()?"A":"_", amusementPark.isActive()?"A":"_", radioTower.isActive()?"A":"_", nf.format( totalRevenue/moves));
     }
 
 
@@ -120,7 +119,7 @@ public class Player {
         return Objects.hash(id);
     }
 
-    public List<Landmark> Landmarks() {
+    public ArrayList<Landmark> landmarks() {
         ArrayList<Landmark> landmarks = new ArrayList<>();
         landmarks.add(trainStation);
         landmarks.add(shoppingMall);
@@ -129,17 +128,15 @@ public class Player {
         return landmarks;
     }
 
-
-
-    public EstablishmentDeck Move(EstablishmentDeck deck) {
+    public EstablishmentDeck move(EstablishmentDeck deck) {
         DiceRoll roll = Dice.Roll(strategy.NumberOfDiceToRoll(this));
         if (canReroll() && strategy.shouldReroll(roll)) {
             roll = Dice.Roll(strategy.NumberOfDiceToRollOnRerole(this));
         }
-        return Move(deck, roll);
+        return move(deck, roll);
     }
 
-    public EstablishmentDeck Move(EstablishmentDeck deck, DiceRoll roll) {
+    public EstablishmentDeck move(EstablishmentDeck deck, DiceRoll roll) {
         this.moves++;
         Map<UUID, Integer> revenuesByPlayer = CalculateRevenueForRoll(roll);
         this.money += revenuesByPlayer.get(id);
@@ -160,7 +157,7 @@ public class Player {
             }
         }
 
-        Landmark landmark = strategy.landmarkToActivate(this.money, Landmarks());
+        Landmark landmark = strategy.landmarkToActivate(this.money, landmarks());
         if (landmark != null) {
             activateLandmark(landmark);
         } else {
@@ -209,22 +206,22 @@ public class Player {
         for (Establishment purpleEstablishment: getPurpleEstablishments()) {
             if (Arrays.stream(purpleEstablishment.getActivateOnRole()).anyMatch(ao->ao ==roll.getValue())) {
                 if (purpleEstablishment.getProductionOnType().equals(ProductionOnType.YourTurnFromAllPlayers)) {
-                    int production = purpleEstablishment.getProduction(establishments);
+                    int production = purpleEstablishment.getProduction(landmarks(), establishments);
                     for (Player otherPlayer: otherPlayers) {
-                        TakeProduction(revenuesByPlayer, production, otherPlayer);
+                        takeProduction(revenuesByPlayer, production, otherPlayer);
                     }
                 }
                 if (purpleEstablishment.getProductionOnType().equals(ProductionOnType.YourTurnFromAnyChosenPlayer)) {
-                    int production = purpleEstablishment.getProduction(establishments);
+                    int production = purpleEstablishment.getProduction(landmarks(), establishments);
                     Player otherPlayer = strategy.ChoosePlayerToTakeFrom(this, otherPlayers);
-                    TakeProduction(revenuesByPlayer, production, otherPlayer);
+                    takeProduction(revenuesByPlayer, production, otherPlayer);
                 }
             }
         }
         return revenuesByPlayer;
     }
 
-    private void TakeProduction(HashMap<UUID, Integer> revenuesByPlayer, int production, Player otherPlayer) {
+    private void takeProduction(HashMap<UUID, Integer> revenuesByPlayer, int production, Player otherPlayer) {
         if (revenuesByPlayer.containsKey(otherPlayer.getId())) {
             revenuesByPlayer.replace(otherPlayer.getId(), revenuesByPlayer.get(otherPlayer.getId()) - production);
         } else {
@@ -243,7 +240,7 @@ public class Player {
             if (Arrays.stream(greenOrBlueEstablishment.getActivateOnRole()).anyMatch(ao->ao ==roll.getValue())) {
                 if (greenOrBlueEstablishment.getProductionOnType().equals(ProductionOnType.YourTurn) ||
                         greenOrBlueEstablishment.getProductionOnType().equals(ProductionOnType.AnyonesTurn)) {
-                    int production = greenOrBlueEstablishment.getProduction(establishments);
+                    int production = greenOrBlueEstablishment.getProduction(landmarks(), establishments);
                     if (revenuesByPlayer.containsKey(getId())) {
                         revenuesByPlayer.replace(getId(), revenuesByPlayer.get(getId()) + production);
                     } else {
@@ -256,7 +253,7 @@ public class Player {
             for (Establishment greenOrBlueEstablishment: otherPlayer.getGreenAndBlueEstablishments()) {
                 if (Arrays.stream(greenOrBlueEstablishment.getActivateOnRole()).anyMatch(ao->ao == roll.getValue())) {
                     if (greenOrBlueEstablishment.getProductionOnType().equals(ProductionOnType.AnyonesTurn)) {
-                        int production = greenOrBlueEstablishment.getProduction(establishments);
+                        int production = greenOrBlueEstablishment.getProduction(landmarks(), establishments);
                         if (revenuesByPlayer.containsKey(otherPlayer.getId())) {
                             revenuesByPlayer.replace(otherPlayer.getId(), revenuesByPlayer.get(otherPlayer.getId()) + production);
                         } else {
@@ -276,7 +273,7 @@ public class Player {
             for (Establishment redEstablishment: otherPlayer.getRedEstablishments()) {
                 if (Arrays.stream(redEstablishment.getActivateOnRole()).anyMatch(ao->ao==roll.getValue())) {
                     if (redEstablishment.getProductionOnType().equals(ProductionOnType.FromPlayerWhoRolledTheDice)) {
-                        int production = redEstablishment.getProduction(establishments);
+                        int production = redEstablishment.getProduction(landmarks(), establishments);
                         if (revenuesByPlayer.containsKey(otherPlayer.getId())) {
                             revenuesByPlayer.replace(otherPlayer.getId(), revenuesByPlayer.get(otherPlayer.getId()) + production);
                         } else {
@@ -327,8 +324,13 @@ public class Player {
         return random.nextInt(6);
     }
 
-    public boolean HasWon() {
-        return Landmarks().stream().anyMatch(lm -> !lm.isActive());
+    public boolean hasWon() {
+        for (Landmark landmark: landmarks()) {
+            if (landmark.isActive() == false) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public int getMoney() {

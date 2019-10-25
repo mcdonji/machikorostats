@@ -71,15 +71,15 @@ public class EstablishmentDeck {
         return deck.stream().mapToInt(i->i.getEstablishmentsLeft()).sum();
     }
 
-    public List<Establishment> AvaliableEstablishments() {
-        return deck
+    public ArrayList<Establishment> AvaliableEstablishments() {
+        return new ArrayList(deck
                 .stream().filter(x -> x.getEstablishmentsLeft() > 0).collect(Collectors.toList())
-                .stream().map(x-> x.getEstablishment()).collect(Collectors.toList());
+                .stream().map(x-> x.getEstablishment()).collect(Collectors.toList()));
     }
 
-    public List<Establishment> Establishments() {
-        return deck
-                .stream().map(x-> x.getEstablishment()).collect(Collectors.toList());
+    public ArrayList<Establishment> Establishments() {
+        return new ArrayList(deck
+                .stream().map(x-> x.getEstablishment()).collect(Collectors.toList()));
     }
 
     public int AvaliableEstablishmentsCount(Establishment establishment) {

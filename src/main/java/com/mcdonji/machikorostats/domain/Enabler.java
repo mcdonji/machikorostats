@@ -4,5 +4,10 @@ public enum Enabler {
     Farm,
     Ranch,
     Mine,
+    Cafe,
+    Bread,
+    Station,
+    Factory,
+    Market,
     None
 }
