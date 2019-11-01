@@ -73,7 +73,7 @@ public class Player {
 
     public String compactRepresentation() {
         NumberFormat nf = new DecimalFormat("##.0");
-        return String.format("(%s %s %s %s%s%s%s %s)", playerNumber, money, establishments.size(),  trainStation.isActive()?"A":"_", shoppingMall.isActive()?"A":"_", amusementPark.isActive()?"A":"_", radioTower.isActive()?"A":"_", nf.format( totalRevenue/moves));
+        return String.format("(%s %s %s %s%s%s%s %s)", playerNumber, money, establishments.size(),  trainStation.isActive()?"A":"_", shoppingMall.isActive()?"A":"_", amusementPark.isActive()?"A":"_", radioTower.isActive()?"A":"_", totalRevenue);
     }
 
 

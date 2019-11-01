@@ -72,6 +72,7 @@ public class PlayerTest {
         assertEquals(0, jim.CalculateRevenueForRoll(new DiceRoll(6)).get(jim.getId()).intValue());
     }
 
+
     @Test
     public void testRevenueFromPlayerWithCafe() {
         ArrayList<Establishment> initialEstablishments = new ArrayList<>();
@@ -102,6 +103,27 @@ public class PlayerTest {
     }
 
 
+    @Test
+    public void testRevenueFromPlayerWithCheeseFactoryRanch() {
+        ArrayList<Establishment> initialEstablishments = new ArrayList<>();
+        initialEstablishments.add(Establishments.Ranch);
+        initialEstablishments.add(Establishments.Ranch);
+        initialEstablishments.add(Establishments.Ranch);
+        initialEstablishments.add(Establishments.CheeseFactory);
+        Player jim = new Player(1, "Jim", new Random(), 3, initialEstablishments);
+        assertEquals(0, jim.CalculateRevenueForRoll(new DiceRoll(1)).get(jim.getId()).intValue());
+        assertEquals(3, jim.CalculateRevenueForRoll(new DiceRoll(2)).get(jim.getId()).intValue());
+        assertEquals(0, jim.CalculateRevenueForRoll(new DiceRoll(3)).get(jim.getId()).intValue());
+        assertEquals(0, jim.CalculateRevenueForRoll(new DiceRoll(4)).get(jim.getId()).intValue());
+        assertEquals(0, jim.CalculateRevenueForRoll(new DiceRoll(5)).get(jim.getId()).intValue());
+        assertEquals(0, jim.CalculateRevenueForRoll(new DiceRoll(6)).get(jim.getId()).intValue());
+        assertEquals(9, jim.CalculateRevenueForRoll(new DiceRoll(7)).get(jim.getId()).intValue());
+        assertEquals(0, jim.CalculateRevenueForRoll(new DiceRoll(8)).get(jim.getId()).intValue());
+        assertEquals(0, jim.CalculateRevenueForRoll(new DiceRoll(9)).get(jim.getId()).intValue());
+        assertEquals(0, jim.CalculateRevenueForRoll(new DiceRoll(10)).get(jim.getId()).intValue());
+        assertEquals(0, jim.CalculateRevenueForRoll(new DiceRoll(11)).get(jim.getId()).intValue());
+        assertEquals(0, jim.CalculateRevenueForRoll(new DiceRoll(12)).get(jim.getId()).intValue());
+    }
 
 
     @Test

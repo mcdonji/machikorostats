@@ -9,7 +9,7 @@ public class Dice {
         DiceRoll diceRoll = new DiceRoll();
         for (int i =0; i < numberOfDiceToRoll; i++)
         {
-            diceRoll.AddRoll(random.nextInt(6));
+            diceRoll.AddRoll(random.nextInt(6)+1);
         }
 
         return  diceRoll;

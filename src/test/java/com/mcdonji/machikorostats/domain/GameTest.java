@@ -1,5 +1,6 @@
 package com.mcdonji.machikorostats.domain;
 
+import com.mcdonji.machikorostats.domain.strategies.CheeseFactoryStrategy;
 import com.mcdonji.machikorostats.domain.strategies.ConvenienceStoreStrategy;
 import com.mcdonji.machikorostats.domain.strategies.RandomStrategy;
 import org.junit.Test;
@@ -57,5 +58,16 @@ public class GameTest {
             System.out.println( i  + " " + ticks.get(i));
         }
     }
+
+    @Test
+    public void testExecuteTwoPlayerRandomVsCheeseFactoryStrategyGame() {
+        Game game = new Game(new CheeseFactoryStrategy(), new RandomStrategy());
+        GameResult gameResult = game.play();
+        ArrayList<String> ticks = gameResult.getTicks();
+        for (int i = 0; i < ticks.size(); i++) {
+            System.out.println( i  + " " + ticks.get(i));
+        }
+    }
+
 
 }

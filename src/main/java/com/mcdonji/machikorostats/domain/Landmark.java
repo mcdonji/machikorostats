@@ -31,6 +31,23 @@ public class Landmark {
     public static String AmusementParkName = "AmusementPark";
     public static String RadioTowerName = "RadioTower";
 
+    public static Landmark canGetLandmark(int money, ArrayList<Landmark> landmarks, String radioTowerName) {
+        Landmark radioTower = Landmark.get(radioTowerName, landmarks);
+        if (!radioTower.isActive() && money >= radioTower.getCost()) {
+            return radioTower;
+        }
+        return null;
+    }
+
+
+    public static Landmark getLandmarkInActivationOrder(int money, ArrayList<Landmark> landmarks, ArrayList<String> landMarkActivationOrder) {
+        for (String landmarkName: landMarkActivationOrder) {
+            Landmark choice = canGetLandmark(money, landmarks, landmarkName);
+            if (choice != null) return choice;
+        }
+        return null;
+    }
+
 
     public static Landmark get(String name, ArrayList<Landmark> landmarks) {
         return landmarks.stream().filter(landmark -> landmark.getName() == name).findFirst().get();
