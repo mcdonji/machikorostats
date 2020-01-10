@@ -3,6 +3,7 @@ package com.mcdonji.machikorostats.domain;
 import java.util.ArrayList;
 
 public class GameResult {
+    public Player Winner;
     private ArrayList<String> ticks = new ArrayList<String>();
     private long seconds;
 

@@ -18,22 +18,31 @@ public class Game {
 
     private int roundsToComplete = 0;
 
+
     public Game(Strategy... strategies) {
+        Game(Arrays.asList(strategies));
+    }
+
+    protected void Game(List<Strategy> strategies) {
         deck = EstablishmentDeck.CreateDeck();
-        players = new ArrayList<Player>(strategies.length);
+        players = new ArrayList<Player>(strategies.size());
         random = new Random();
 
-        for (int i = 0; i < strategies.length; i++) {
+        for (int i = 0; i < strategies.size(); i++) {
             ArrayList<Establishment> initEstablishments = new ArrayList<>();
             initEstablishments.add(deck.Take(Establishments.WheatField));
             initEstablishments.add(deck.Take(Establishments.Bakery));
-            Player player = new Player(i, random, 3, initEstablishments, strategies[i]);
+            Player player = new Player(i, random, 3, initEstablishments, strategies.get(i));
             players.add(player);
         }
 
         for (Player player : players) {
             player.addOtherPlayers(players);
         }
+    }
+
+    public Player getFirstPlayer() {
+        return players.stream().filter(p -> p.getPlayerNumber() == 1).findFirst().get();
     }
 
     public GameResult play() {
@@ -49,6 +58,13 @@ public class Game {
         stopWatch.stop();
         this.endTime = new Date();
         gameResult.setSeconds(stopWatch.getTotalTimeMillis());
+        for (Player player: players ) {
+            if (player.hasWon()) {
+                gameResult.Winner = player;
+            }
+        }
+
+
         return gameResult;
     }
 

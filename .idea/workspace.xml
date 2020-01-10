@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ca1c799-8f6b-4391-82d9-58d49f31a5a2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/DiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/GameWithRandomOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/StrategyEvaluator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/resourceHashesCache.bin" afterDir="false" />
@@ -14,13 +15,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/EstablishmentDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/EstablishmentDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Landmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Landmark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/strategies/CheeseFactoryStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/strategies/CheeseFactoryStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/GameResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/GameResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/GameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,19 +48,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>,</find>
-      <find>&quot;,</find>
-      <find>),</find>
-      <find>move</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>&quot;,</replace>
-      <replace>&quot;),</replace>
-      <replace>);</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -80,7 +64,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549410485929" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../algorithms101" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -121,7 +105,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.GameTest.testExecuteTwoPlayerRandomStrategyGame">
+  <component name="RunManager" selected="Gradle.GameTest.testConvenienceStoreStrategyEvaluation">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -140,6 +124,26 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;com.mcdonji.machikorostats.domain.DiceTest.RollOfSingleDiceIsOnceSixthForEachValue&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="GameTest.testConvenienceStoreStrategyEvaluation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.mcdonji.machikorostats.domain.GameTest.testConvenienceStoreStrategyEvaluation&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -180,26 +184,6 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;com.mcdonji.machikorostats.domain.GameTest.testExecuteTwoPlayerRandomVsCheeseFactoryStrategyGame&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="GameTest.testExecuteTwoPlayerRandomVsConvenienceStoreStrategyGame" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.mcdonji.machikorostats.domain.GameTest.testExecuteTwoPlayerRandomVsConvenienceStoreStrategyGame&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -267,20 +251,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.GameTest.testExecuteTwoPlayerRandomVsConvenienceStoreStrategyGame" />
       <item itemvalue="Gradle.GameTest.testExecuteTwoPlayerRandomVsCheeseFactoryStrategyGame" />
       <item itemvalue="Gradle.PlayerTest.testRevenueFromPlayerWithCheeseFactoryRanch" />
       <item itemvalue="Gradle.DiceTest.RollOfSingleDiceIsOnceSixthForEachValue" />
       <item itemvalue="Spring Boot.ApplicationStartup" />
       <item itemvalue="Gradle.GameTest.testExecuteTwoPlayerRandomStrategyGame" />
+      <item itemvalue="Gradle.GameTest.testConvenienceStoreStrategyEvaluation" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.GameTest.testConvenienceStoreStrategyEvaluation" />
         <item itemvalue="Gradle.GameTest.testExecuteTwoPlayerRandomStrategyGame" />
         <item itemvalue="Gradle.GameTest.testExecuteTwoPlayerRandomVsCheeseFactoryStrategyGame" />
         <item itemvalue="Gradle.DiceTest.RollOfSingleDiceIsOnceSixthForEachValue" />
         <item itemvalue="Gradle.PlayerTest.testRevenueFromPlayerWithCheeseFactoryRanch" />
-        <item itemvalue="Gradle.GameTest.testExecuteTwoPlayerRandomVsConvenienceStoreStrategyGame" />
       </list>
     </recent_temporary>
   </component>
@@ -314,7 +298,7 @@
       <workItem from="1570735975953" duration="4329000" />
       <workItem from="1571671703610" duration="46739000" />
       <workItem from="1571932621702" duration="24107000" />
-      <workItem from="1572375900880" duration="1930000" />
+      <workItem from="1572375900880" duration="29328000" />
     </task>
     <servers />
   </component>
@@ -346,32 +330,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/PlayerTest.java</url>
           <line>91</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/mcdonji/machikorostats/domain/GameTest.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Game.java</url>
-          <line>44</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/mcdonji/machikorostats/domain/Player.java</url>
-          <line>121</line>
-          <properties class="com.mcdonji.machikorostats.domain.Player" method="landmarks">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
